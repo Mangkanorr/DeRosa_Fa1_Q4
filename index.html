@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Sign-Up Sheet</title>
+  <style>
+    .error {
+      border-color: red;
+    }
+    .success {
+      border-color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="sign-up-form" onsubmit="return validateForm()">
+
+    <fieldset>
+      <legend>Sign Up Form</legend>
+
+      <label for="fullName">Full Name: </label>
+      <input type="text" id="fullName" name="fullName" onblur="checkInput(this)" onfocus="clearBorder(this)">
+      <br><br>
+
+      <label for="username">Username: </label>
+      <input type="text" id="username" name="username" onblur="checkInput(this)" onfocus="clearBorder(this)">
+      <br><br>
+
+      <label for="gender">Gender: </label>
+      <select name="gender" id="gender" onblur="checkInput(this)" onfocus="clearBorder(this)">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Prefer not to mention">Prefer not to mention</option>
+      </select>
+      <br><br>
+
+      <label for="email">Email Address: </label>
+      <input type="email" id="email" name="email" onblur="checkInput(this)" onfocus="clearBorder(this)">
+      <br><br>
+
+      <input type="submit" value="Submit" id="submit-btn">
+      <input type="reset" value="Clear" id="reset-btn" onclick="clearForm()">
+
+    </fieldset>
+
+  </form>
+
+  <p id="output"></p>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
